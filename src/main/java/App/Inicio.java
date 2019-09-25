@@ -25,16 +25,16 @@ public class Inicio {
         System.out.println("4<-     Ingrse labores.\n");
         System.out.println("            BUSQUEDA Y LISTA.\n");
         System.out.println("5<-     Busque la informacion de un productor.");
-        System.out.println("6<-    Busque la informacion de un vivero.");
-        System.out.println("7<-    Busque la informacion de un proceso.");
-        System.out.println("8<-    Busque la informacion de una labor.");
-        System.out.println("9<-    Liste los Productores");
+        System.out.println("6<-     Busque la informacion de un vivero.");
+        System.out.println("7<-     Busque la informacion de un proceso.");
+        System.out.println("8<-     Busque la informacion de una labor.");
+        System.out.println("9<-     Liste los Productores");
         System.out.println("10<-    Liste los viveros.\n");
         System.out.println("            ACTUALIZACIONES.\n");
-        System.out.println("11<-     Actualice la informacion de Productores.");
-        System.out.println("12<-     Actualice la informacion de viveros.");
-        System.out.println("13<-     Actualice la informacion de procesos.");
-        System.out.println("14<-     Actualice la informacion de labores.\n");
+        System.out.println("11<-    Actualice la informacion de Productores.");
+        System.out.println("12<-    Actualice la informacion de viveros.");
+        System.out.println("13<-    Actualice la informacion de procesos.");
+        System.out.println("14<-    Actualice la informacion de labores.\n");
 
         System.out.println("            ELIMINACION.\n");
         System.out.println("15<-    Elimine Productores,");
@@ -60,49 +60,49 @@ public class Inicio {
                     
                 break;
                 case 3:
-                    
+                    crudProceso.agregarProceso(productores, entradaInt, entradaStr);
                 break;
                 case 4:
                     
                 break;
                 case 5:
-                    
+                    crudProductor.buscarProductor(productores, entradaInt, entradaStr);
                 break;
                 case 6:
                     
                 break;
                 case 7:
-                    
+                    crudProceso.buscarProceso(productores, entradaInt, entradaStr);
                 break;
                 case 8:
                     
                 break;
                 case 9:
-                    
+                    crudProductor.listarProductor(productores);
                 break;
                 case 10:
                     
                 break;
                 case 11:
-                    
+                    crudProductor.actualizarProductor(productores, entradaInt, entradaStr);
                 break;
                 case 12:
                     
                 break;
                 case 13:
-                    
+                    crudProceso.ActualizarProceso(productores, entradaInt, entradaStr);
                 break;
                 case 14:
                     
                 break;
                 case 15:
-                    
+                    crudProductor.eliminarProductor(productores, entradaInt, entradaStr);
                 break;
                 case 16:
                     
                 break;
                 case 17:
-                    
+                    crudProceso.eliminarProceso(productores, entradaInt, entradaStr);
                 break;
                 case 18:
                     
