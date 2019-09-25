@@ -24,17 +24,18 @@ public class Inicio {
         System.out.println("3<-     ingrese procesos.");
         System.out.println("4<-     Ingrse labores.\n");
         System.out.println("            BUSQUEDA Y LISTA.\n");
-        System.out.println("9<-     Busque la informacion de un productor.");
-        System.out.println("10<-    Busque la informacion de un vivero.");
-        System.out.println("11<-    Busque la informacion de un proceso.");
-        System.out.println("12<-    Busque la informacion de una labor.");
+        System.out.println("5<-     Busque la informacion de un productor.");
+        System.out.println("6<-    Busque la informacion de un vivero.");
+        System.out.println("7<-    Busque la informacion de un proceso.");
+        System.out.println("8<-    Busque la informacion de una labor.");
+        System.out.println("9<-    Liste los Productores");
+        System.out.println("10<-    Liste los viveros.\n");
         System.out.println("            ACTUALIZACIONES.\n");
-        System.out.println("5<-     Actualice la informacion de Productores.");
-        System.out.println("6<-     Actualice la informacion de viveros.");
-        System.out.println("7<-     Actualice la informacion de procesos.");
-        System.out.println("8<-     Actualice la informacion de labores.\n");
-        System.out.println("13<-    Liste los Productores");
-        System.out.println("14<-    Liste los viveros.\n");
+        System.out.println("11<-     Actualice la informacion de Productores.");
+        System.out.println("12<-     Actualice la informacion de viveros.");
+        System.out.println("13<-     Actualice la informacion de procesos.");
+        System.out.println("14<-     Actualice la informacion de labores.\n");
+
         System.out.println("            ELIMINACION.\n");
         System.out.println("15<-    Elimine Productores,");
         System.out.println("16<-    Elimine viveros.");
