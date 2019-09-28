@@ -29,7 +29,8 @@ public class crudProceso {
             }else
             {
                 //ENCONTRAR VIVERO
-                Vivero encontrarVivero = crudVivero.encontrarVivero(encontrarProductor, entradaInt);
+                Vivero encontrarVivero;
+                encontrarVivero = CrudVivero.encontrarVivero(encontrarProductor.getViveros(), entradaInt);
                 if (encontrarVivero == null)
                 {
                     System.out.println("No se encuentra este vivero.");
@@ -80,7 +81,7 @@ public class crudProceso {
             }else
             {
                 procesoEncontrado.imprimir();
-                //¡¡¡MOSTRAR LABORES!!!
+                CrudLabor.imprimirLabores(procesoEncontrado.getLabores());
             }
         }
     }
