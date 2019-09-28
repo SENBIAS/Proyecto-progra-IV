@@ -54,55 +54,55 @@ public class Inicio {
             opcion = entradaInt.nextInt();
             switch (opcion) {
                 case 1:
-                    crudProductor.agregarProductor(productores, entradaInt, entradaStr);
+                    CrudProductor.agregarProductor(productores, entradaInt, entradaStr);
                 break;
                 case 2:
                     
                 break;
                 case 3:
-                    crudProceso.agregarProceso(productores, entradaInt, entradaStr);
+                    CrudProceso.agregarProceso(productores, entradaInt, entradaStr);
                 break;
                 case 4:
                     
                 break;
                 case 5:
-                    crudProductor.buscarProductor(productores, entradaInt, entradaStr);
+                    CrudProductor.buscarProductor(productores, entradaInt, entradaStr);
                 break;
                 case 6:
                     
                 break;
                 case 7:
-                    crudProceso.buscarProceso(productores, entradaInt, entradaStr);
+                    CrudProceso.buscarProceso(productores, entradaInt, entradaStr);
                 break;
                 case 8:
                     
                 break;
                 case 9:
-                    crudProductor.listarProductor(productores);
+                    CrudProductor.listarProductor(productores);
                 break;
                 case 10:
                     
                 break;
                 case 11:
-                    crudProductor.actualizarProductor(productores, entradaInt, entradaStr);
+                    CrudProductor.actualizarProductor(productores, entradaInt, entradaStr);
                 break;
                 case 12:
                     
                 break;
                 case 13:
-                    crudProceso.ActualizarProceso(productores, entradaInt, entradaStr);
+                    CrudProceso.ActualizarProceso(productores, entradaInt, entradaStr);
                 break;
                 case 14:
                     
                 break;
                 case 15:
-                    crudProductor.eliminarProductor(productores, entradaInt, entradaStr);
+                    CrudProductor.eliminarProductor(productores, entradaInt, entradaStr);
                 break;
                 case 16:
                     
                 break;
                 case 17:
-                    crudProceso.eliminarProceso(productores, entradaInt, entradaStr);
+                    CrudProceso.eliminarProceso(productores, entradaInt, entradaStr);
                 break;
                 case 18:
                     
