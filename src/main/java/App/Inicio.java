@@ -7,7 +7,7 @@ package App;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import Modelo.Productor;
+import Modelo.*;
 import CRUD.*;
 
 /**
@@ -48,65 +48,69 @@ public class Inicio {
         Scanner entradaInt = new Scanner(System.in);
         Scanner entradaStr= new Scanner(System.in);
         ArrayList<Productor> productores = new ArrayList<>();
+        Productor prod ;
         int opcion;
         do {
             menu();
             opcion = entradaInt.nextInt();
             switch (opcion) {
                 case 1:
-                    CrudProductor.agregarProductor(productores, entradaInt, entradaStr);
-                break;
+                    crudProductor.agregarProductor(productores, entradaInt, entradaStr);
+                    break;
                 case 2:
-                    
-                break;
+                    CrudVivero.crearVivero(productores, entradaInt, entradaStr);
+                    break;
                 case 3:
-                    CrudProceso.agregarProceso(productores, entradaInt, entradaStr);
-                break;
+                    crudProceso.agregarProceso(productores, entradaInt, entradaStr);
+                    break;
                 case 4:
-                    
-                break;
+                    CrudLabor.crearLabor(productores, entradaStr);
+                    break;
                 case 5:
-                    CrudProductor.buscarProductor(productores, entradaInt, entradaStr);
-                break;
+                    crudProductor.buscarProductor(productores, entradaInt, entradaStr);
+                    break;
                 case 6:
-                    
-                break;
+                    CrudVivero.buscarVivero(productores);
+                    break;
                 case 7:
-                    CrudProceso.buscarProceso(productores, entradaInt, entradaStr);
-                break;
+                    crudProceso.buscarProceso(productores, entradaInt, entradaStr);
+                    break;
                 case 8:
                     
-                break;
+                    break;
                 case 9:
-                    CrudProductor.listarProductor(productores);
-                break;
+                    crudProductor.listarProductor(productores);
+                    break;
                 case 10:
-                    
-                break;
+                    prod = crudProductor.encontrarProductor(productores, entradaInt);
+                    CrudVivero.mostrarViveros(prod.getViveros());
+                    break;
                 case 11:
-                    CrudProductor.actualizarProductor(productores, entradaInt, entradaStr);
-                break;
+                    crudProductor.actualizarProductor(productores, entradaInt, entradaStr);
+                    break;
                 case 12:
-                    
-                break;
+                    prod = crudProductor.encontrarProductor(productores, entradaInt);
+                    Vivero vivero = CrudVivero.encontrarVivero(prod.getViveros(), entradaInt);
+                    CrudVivero.actualizarVivero(vivero);
+                    break;
                 case 13:
-                    CrudProceso.ActualizarProceso(productores, entradaInt, entradaStr);
-                break;
+                    crudProceso.ActualizarProceso(productores, entradaInt, entradaStr);
+                    break;
                 case 14:
                     
-                break;
+                    break;
                 case 15:
-                    CrudProductor.eliminarProductor(productores, entradaInt, entradaStr);
-                break;
+                    crudProductor.eliminarProductor(productores, entradaInt, entradaStr);
+                    break;
                 case 16:
-                    
-                break;
+                    CrudVivero.eliminarVivero(productores);
+                    break;
                 case 17:
-                    CrudProceso.eliminarProceso(productores, entradaInt, entradaStr);
-                break;
+                    crudProceso.eliminarProceso(productores, entradaInt, entradaStr);
+                    break;
                 case 18:
                     
-                break;
+                    break;
                 default:
                     System.out.println("Digite una opcion correcta");
                 break;

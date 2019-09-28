@@ -23,18 +23,16 @@ public class CrudVivero {
             System.out.println("Sin productores no se pueden añadir viveros");
         }else{
             Productor productor;
-            productor = CrudProductor.encontrarProductor(listaProductores, entradaInt);
+            productor = crudProductor.encontrarProductor(listaProductores, entradaInt);
             viveros = productor.getViveros();
         }
         return viveros;
     }
     
-    public static Vivero encontrarVivero(Productor productor,Scanner tecladoInt){
+    public static Vivero encontrarVivero(ArrayList<Vivero> listaViveros,Scanner tecladoInt){
         int codigoVivero;
         System.out.print("Digite el codigo del vivero: ");
         codigoVivero = tecladoInt.nextInt();
-        ArrayList<Vivero> listaViveros;
-        listaViveros = productor.getViveros();
         
         for(Vivero vivero : listaViveros){
             if(vivero.getCodigo() == codigoVivero){
@@ -51,12 +49,12 @@ public class CrudVivero {
         if(listaProductores.isEmpty()){
             System.out.println("No existen productores, por tal no hay viveros");
         }else{
-            Productor productor = CrudProductor.encontrarProductor(listaProductores, entradaInt);
+            Productor productor = crudProductor.encontrarProductor(listaProductores, entradaInt);
             
             if(productor == null){
                 System.out.println("No existe un productor con este documento.");
             }else{
-                vivero = encontrarVivero(productor, entradaInt); 
+                vivero = encontrarVivero(productor.getViveros(), entradaInt); 
                 
                 if(vivero == null){
                     System.out.println("No existe un viveo con este codigo.");
@@ -68,39 +66,40 @@ public class CrudVivero {
         }
     }
     
-    public static void mostrarViveros(Productor productor){
-        ArrayList<Vivero> listaViveros = productor.getViveros();
+    public static void mostrarViveros(ArrayList<Vivero> listaViveros){
         int i=1;
-        System.out.println("Viveros asociados a el productor:");
-        for(Vivero vivero : listaViveros){
-            System.out.println("Vivero #"+i);
-            vivero.imprimir();
-            i++;
+        if(listaViveros.isEmpty()){
+            System.out.println("No hay viveron asociados al productor.");
+        }else{
+            System.out.println("Viveros asociados a el productor:");
+            for(Vivero vivero : listaViveros){
+                 System.out.println("Vivero #"+i);
+                 vivero.imprimir();
+                 i++;
+            }
         }
     }
     
-    public static void crearVivero(Productor productor,Scanner entradaInt,Scanner entradaString){
+    public static void crearVivero(ArrayList<Productor> productor,Scanner entradaInt,Scanner entradaString){
         int codigo;
         String nombre;
         String departamento;
         String municipio;
-        Vivero vivero;
+        ArrayList<Vivero> vivero = validar(productor);
         
-        System.out.print("Ingrese el nombre del vivero: ");
-        nombre = entradaString.nextLine();
-        System.out.print("Ingrese el codigo del vivero: ");
-        codigo = entradaInt.nextInt();
-        System.out.print("Ingrese el departamento del vivero: ");
-        departamento = entradaString.nextLine();
-        System.out.print("Ingrese el municipio del vivero: ");
-        municipio = entradaString.nextLine();
-        
-        vivero = new Vivero(codigo,nombre,departamento,municipio);
-        
-        productor.getViveros().add(vivero);
-        
-        System.out.println("Vivero agregado.");
-        
+        if(vivero.isEmpty()){
+            System.out.println("No exiten productores, no pueden agregarse viveros");
+        }else{
+            System.out.print("Ingrese el nombre del vivero: ");
+            nombre = entradaString.nextLine();
+            System.out.print("Ingrese el codigo del vivero: ");
+            codigo = entradaInt.nextInt();
+            System.out.print("Ingrese el departamento del vivero: ");
+            departamento = entradaString.nextLine();
+            System.out.print("Ingrese el municipio del vivero: ");
+            municipio = entradaString.nextLine(); 
+            System.out.println("Vivero agregado.");
+        }     
     }
     
     private static void menuActualizar(){
@@ -152,10 +151,10 @@ public class CrudVivero {
         System.out.println("Municipio actualizado.");
     }
     
-    public static void actualizarVivero(Productor productor){
+    public static void actualizarVivero(Vivero vivero){
         Scanner tecladoInt = new Scanner(System.in);
         Scanner tecladoString = new Scanner(System.in);
-        Vivero vivero = encontrarVivero(productor, tecladoInt);
+ 
         int opcion;
         
         do {   
@@ -177,6 +176,26 @@ public class CrudVivero {
                     break;
             }
         } while (opcion < 5);
+    }
+    
+    public static void buscarVivero(ArrayList<Productor> listaProductores){
+        ArrayList<Vivero> listaViveros = validar(listaProductores);
+        Scanner tecladoInt = new Scanner(System.in);
+        if(listaViveros.isEmpty()){
+            System.out.println("No hay vivevos.");
+        }else{
+            System.out.println("Bucar vivero.");
+            Vivero vivero = encontrarVivero(listaViveros, tecladoInt);
+            
+            if(vivero == null){
+                System.out.println("Vivero no encontrado.");
+            }else{
+                vivero.imprimir();
+                Proceso proceso = crudProceso.encontrarProceso(vivero.getProcesos(), tecladoInt);
+                proceso.imprimir();
+                CrudLabor.imprimirLabores(proceso.getLabores());
+            }
+        }       
     }
  
 }
