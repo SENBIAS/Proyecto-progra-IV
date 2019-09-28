@@ -46,7 +46,7 @@ public class crudProductor {
             }else
             {
                 productorEncontrado.imprimir();
-                //¡¡¡MOSTRAR VIVEROS!!!
+                CrudVivero.mostrarViveros(productorEncontrado.getViveros());
             }
         }
     }
