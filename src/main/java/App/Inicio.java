@@ -27,7 +27,7 @@ public class Inicio {
         System.out.println("5<-     Busque la informacion de un productor.");
         System.out.println("6<-     Busque la informacion de un vivero.");
         System.out.println("7<-     Busque la informacion de un proceso.");
-        System.out.println("8<-     Busque la informacion de una labor.");
+        System.out.println("8<-     Liste las labores.");
         System.out.println("9<-     Liste los Productores");
         System.out.println("10<-    Liste los viveros.\n");
         System.out.println("            ACTUALIZACIONES.\n");
@@ -48,6 +48,10 @@ public class Inicio {
         Scanner entradaInt = new Scanner(System.in);
         Scanner entradaStr= new Scanner(System.in);
         ArrayList<Productor> productores = new ArrayList<>();
+       Productor nuevoproductor = new Productor (12345,"Anderson","Gomez");
+       Productor nuevoproductor1= new Productor (9876,"Sebastian","londono");
+       productores.add(nuevoproductor);
+        productores.add(nuevoproductor1);
         Productor prod ;
         int opcion;
         do {
@@ -76,7 +80,7 @@ public class Inicio {
                     crudProceso.buscarProceso(productores, entradaInt, entradaStr);
                     break;
                 case 8:
-                    
+                    CrudLabor.listarLabor(productores, entradaStr);
                     break;
                 case 9:
                     crudProductor.listarProductor(productores);

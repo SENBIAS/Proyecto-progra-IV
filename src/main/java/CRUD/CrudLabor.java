@@ -69,19 +69,19 @@ public class CrudLabor {
         }
     }
     
-    public static void imprimirLabores(ArrayList<Labor> listaLabores){
-        int i = 1;
-        if(listaLabores.isEmpty()){
-            System.out.println("No hay labores para mostrar. ");
-        }else{
-            for(Labor labor : listaLabores){
-                System.out.println("Labor #"+i);
-                labor.imprimir();
-                i++;
+    public static void listarLabor(ArrayList<Productor> listaProductores,Scanner entradaString)
+    {
+        ArrayList<Labor>listaLabores = validar(listaProductores);
+        if (listaLabores.isEmpty())
+        {
+            System.out.println("No hay labores añadidas");
+        }else
+        {
+            for (Labor listaLabore : listaLabores) {
+                listaLabore.imprimir();
             }
         }
     }
-    
     private static void menuActualizarLabor(){
         System.out.println("ACTUALIZAR LABOR.");
         System.out.println("1.Actualizar tipo de labor.");
@@ -155,6 +155,15 @@ public class CrudLabor {
                 System.out.println("Labor eliminada");
             } catch (Exception e) {
                 System.out.println("Error "+e);
+            }
+        }
+    }
+
+    static void imprimirLabores(ArrayList<Labor> labores) {
+        if (labores.isEmpty())
+        {
+            for (Labor labore : labores) {
+                labore.imprimir();
             }
         }
     }
