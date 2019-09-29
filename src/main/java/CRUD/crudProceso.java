@@ -99,7 +99,7 @@ public class crudProceso {
         }
         return procesoEncontrado;
     }
-    public static void ActualizarProceso(ArrayList<Productor> productores, Scanner entradaInt, Scanner entradaStr)
+    public static void actualizarProceso(ArrayList<Productor> productores, Scanner entradaInt, Scanner entradaStr)
     {
         ArrayList<Proceso> procesos = validar(productores, entradaInt, entradaStr);
         if (procesos == null) {

@@ -54,9 +54,8 @@ public class crudProductor {
     {
         int documento;
         Productor productorEncontrado = null;
-        System.out.println("Digite el documento de identidad.");
-        //documento = entradaInt.nextInt();
-        documento=12345;
+        System.out.println("Digite el documento de identidad del productor.");
+        documento = entradaInt.nextInt();
         for (Productor productore : productores) {
             if (productore.getDocumento()==documento)
             {

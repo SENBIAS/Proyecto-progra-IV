@@ -81,26 +81,29 @@ public class CrudVivero {
     }
     
     public static void crearVivero(ArrayList<Productor> productor,Scanner entradaInt,Scanner entradaString){
-        
+        Vivero nuevoVivero= new Vivero();
         ArrayList<Vivero> vivero = validar(productor);
         if(productor.isEmpty()){
             System.out.println("No exiten productores, no pueden agregarse viveros");
         }else{
-            Vivero nuevoVivero= new Vivero(2222,"Las acacias","risaraldas","pereira");
-            Vivero nuevoVivero1= new Vivero(3333,"Las verdes","cauca","popayan");
-            Vivero nuevoVivero2= new Vivero(4444,"Llos Soles","nariño","pasto");
-            /*System.out.print("Ingrese el codigo del vivero: ");
+            System.out.print("Ingrese el codigo del vivero: ");
+
             nuevoVivero.setCodigo(entradaInt.nextInt());
+
             System.out.print("Ingrese el nombre del vivero: ");
+
             nuevoVivero.setNombre(entradaString.nextLine());
+
             System.out.print("Ingrese el departamento del vivero: ");
+
             nuevoVivero.setDepartamento(entradaString.nextLine());
+
             System.out.print("Ingrese el municipio del vivero: ");
-            nuevoVivero.setMunicipio(entradaString.nextLine());*/
+
+            nuevoVivero.setMunicipio(entradaString.nextLine());
+            
             if(vivero.add(nuevoVivero))
             {
-                vivero.add(nuevoVivero1);
-                vivero.add(nuevoVivero2);
                 System.out.println("Vivero agregado.");
             }else
             {

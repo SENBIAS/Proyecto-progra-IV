@@ -69,7 +69,7 @@ public class CrudLabor {
         }
     }
     
-    public static void listarLabor(ArrayList<Productor> listaProductores,Scanner entradaString)
+    public static void buscarLabor(ArrayList<Productor> listaProductores,Scanner entradaString)
     {
         ArrayList<Labor>listaLabores = validar(listaProductores);
         if (listaLabores.isEmpty())
@@ -77,8 +77,62 @@ public class CrudLabor {
             System.out.println("No hay labores añadidas");
         }else
         {
-            for (Labor listaLabore : listaLabores) {
-                listaLabore.imprimir();
+            Labor laborEncontrada = encontrarLabor(listaLabores,entradaString);
+            if (laborEncontrada==null)
+            {
+                System.out.println("No existen labores con ese tipo");
+            }else
+            {
+                laborEncontrada.imprimir();
+            }
+        }
+    }
+    
+    private static Labor encontrarLabor(ArrayList<Labor> listaLabores, Scanner entradaStr)
+    {
+        Labor laborEncontrada = null;
+        String tipoLabor;
+        System.out.println("Digite el tipo de labor");
+        tipoLabor= entradaStr.nextLine();
+        for (Labor listaLabore : listaLabores) {
+            if (listaLabore.getTipoLabor().equals(tipoLabor))
+            {
+                laborEncontrada=listaLabore;
+            }
+        }
+        return laborEncontrada;
+    }
+    
+    public static void actualizarLabor(ArrayList<Productor> productores, Scanner entradaInt, Scanner entradaStr){
+        int opcion;
+        ArrayList<Labor> listaLabores = validar(productores);
+        if(listaLabores.isEmpty())
+        {
+            System.out.println("No hay labores para actualizar");
+        }else
+        {
+            Labor laborEncontrada= encontrarLabor(listaLabores,entradaStr);
+            if (laborEncontrada==null)
+            {
+                System.out.println("No existe este tipo de labor");
+            }else
+            {
+                do {            
+                    menuActualizarLabor();
+                    System.out.print("Opcion escogida: ");
+                    opcion = entradaInt.nextInt();
+                    switch (opcion) {
+                        case 1:
+                            actualizarTipoLabor(laborEncontrada);
+                            break;
+                        case 2:
+                            actualizarFecha(laborEncontrada);
+                            break;
+                        case 3:
+                            actualizarDescripcion(laborEncontrada);
+                            break;          
+                    }
+                } while (opcion != 4);
             }
         }
     }
@@ -122,39 +176,25 @@ public class CrudLabor {
         
         System.out.println("Descripcion actualizada.");
     }
-    
-    public static void actualizarLabor(Labor labor){
-        int opcion;
-        Scanner entradaInt = new Scanner(System.in);
-        Scanner entradaString = new Scanner(System.in);
-        
-        do {            
-            menuActualizarLabor();
-            System.out.print("Opcion escogida: ");
-            opcion = entradaInt.nextInt();
-            switch (opcion) {
-                case 1:
-                    actualizarTipoLabor(labor);
-                    break;
-                case 2:
-                    actualizarFecha(labor);
-                    break;
-                case 3:
-                    actualizarDescripcion(labor);
-                    break;          
-            }
-        } while (opcion < 4);
-    }
-    
-    public static void eliminarLabor(Labor labor,ArrayList<Labor>listaLabores){
+
+    public static void eliminarLabor(ArrayList<Productor> productores, Scanner entradaInt, Scanner entradaStr){
+        ArrayList<Labor> listaLabores = validar (productores);
         if(listaLabores.isEmpty()){
             System.out.println("No hay labores.");
         }else{
-            try {
-                listaLabores.remove(labor);
-                System.out.println("Labor eliminada");
-            } catch (Exception e) {
-                System.out.println("Error "+e);
+            Labor laborEncontrada=encontrarLabor(listaLabores,entradaStr);
+            if(laborEncontrada==null)
+            {
+                System.out.println("No se ecuentra este tipo de labor"); 
+            }else
+            {
+                if(listaLabores.remove(laborEncontrada))
+                {
+                    System.out.println("Labor eliminada con exito");
+                }else
+                {
+                    System.out.println("No e puede eliminar esta labor");
+                }
             }
         }
     }
@@ -162,10 +202,13 @@ public class CrudLabor {
     static void imprimirLabores(ArrayList<Labor> labores) {
         if (labores.isEmpty())
         {
+            System.out.println("No hay labores");
+        }
+        else
+        {
             for (Labor labore : labores) {
                 labore.imprimir();
             }
         }
     }
-    
 }
