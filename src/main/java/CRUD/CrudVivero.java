@@ -23,7 +23,7 @@ public class CrudVivero {
             System.out.println("Sin productores no se pueden añadir viveros");
         }else{
             Productor productor;
-            productor = crudProductor.encontrarProductor(listaProductores, entradaInt);
+            productor = CrudProductor.encontrarProductor(listaProductores, entradaInt);
             viveros = productor.getViveros();
         }
         return viveros;
@@ -49,7 +49,7 @@ public class CrudVivero {
         if(listaProductores.isEmpty()){
             System.out.println("No existen productores, por tal no hay viveros");
         }else{
-            Productor productor = crudProductor.encontrarProductor(listaProductores, entradaInt);
+            Productor productor = CrudProductor.encontrarProductor(listaProductores, entradaInt);
             
             if(productor == null){
                 System.out.println("No existe un productor con este documento.");
@@ -201,7 +201,7 @@ public class CrudVivero {
                 System.out.println("Vivero no encontrado.");
             }else{
                 vivero.imprimir();
-                Proceso proceso = crudProceso.encontrarProceso(vivero.getProcesos(), tecladoInt);
+                Proceso proceso = CrudProceso.encontrarProceso(vivero.getProcesos(), tecladoInt);
                 proceso.imprimir();
                 CrudLabor.imprimirLabores(proceso.getLabores());
             }

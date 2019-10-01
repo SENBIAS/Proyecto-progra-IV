@@ -21,7 +21,7 @@ public class CrudLabor {
            System.out.println("Sin productores no pueden existir labores");
        }else{
            Productor productor;
-           productor = crudProductor.encontrarProductor(listaProductores, entradaInt);
+           productor = CrudProductor.encontrarProductor(listaProductores, entradaInt);
            
            if(productor == null){
                System.out.println("No existe un productor asociado a este documento.");
@@ -33,7 +33,7 @@ public class CrudLabor {
                    System.out.println("No se encontro un vivero con este codigo.");
                }else{
                    Proceso proceso;
-                   proceso = crudProceso.encontrarProceso(vivero.getProcesos(), entradaInt);
+                   proceso = CrudProceso.encontrarProceso(vivero.getProcesos(), entradaInt);
                    
                    if(proceso == null){
                        System.out.println("No exite el proceso en este vivero.");
