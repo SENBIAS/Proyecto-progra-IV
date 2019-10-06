@@ -7,7 +7,8 @@ package App;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import Modelo.Productor;
+import Modelo.*;
+import CRUD.*;
 
 /**
  *
@@ -26,6 +27,7 @@ public class Inicio {
         System.out.println("5<-     Busque la informacion de un productor.");
         System.out.println("6<-     Busque la informacion de un vivero.");
         System.out.println("7<-     Busque la informacion de un proceso.");
+<<<<<<< HEAD
         System.out.println("8<-     Busque la informacion de una labor.");
         System.out.println("9<-     Liste los Productores");
         System.out.println("10<-    Liste los viveros.\n");
@@ -34,6 +36,16 @@ public class Inicio {
         System.out.println("12<-     Actualice la informacion de viveros.");
         System.out.println("13<-     Actualice la informacion de procesos.");
         System.out.println("14<-     Actualice la informacion de labores.\n");
+=======
+        System.out.println("8<-     Busque la informacion de las labores.");
+        System.out.println("9<-     Liste los Productores");
+        System.out.println("10<-    Liste los viveros.\n");
+        System.out.println("            ACTUALIZACIONES.\n");
+        System.out.println("11<-    Actualice la informacion de Productores.");
+        System.out.println("12<-    Actualice la informacion de viveros.");
+        System.out.println("13<-    Actualice la informacion de procesos.");
+        System.out.println("14<-    Actualice la informacion de labores.\n");
+>>>>>>> pruebas
 
         System.out.println("            ELIMINACION.\n");
         System.out.println("15<-    Elimine Productores,");
@@ -47,65 +59,69 @@ public class Inicio {
         Scanner entradaInt = new Scanner(System.in);
         Scanner entradaStr= new Scanner(System.in);
         ArrayList<Productor> productores = new ArrayList<>();
+        Productor prod ;
         int opcion;
         do {
             menu();
             opcion = entradaInt.nextInt();
             switch (opcion) {
                 case 1:
-                    
-                break;
+                    CrudProductor.agregarProductor(productores, entradaInt, entradaStr);
+                    break;
                 case 2:
-                    
-                break;
+                    CrudVivero.crearVivero(productores, entradaInt, entradaStr);
+                    break;
                 case 3:
-                    
-                break;
+                    CrudProceso.agregarProceso(productores, entradaInt, entradaStr);
+                    break;
                 case 4:
-                    
-                break;
+                    CrudLabor.crearLabor(productores, entradaStr);
+                    break;
                 case 5:
-                    
-                break;
+                    CrudProductor.buscarProductor(productores, entradaInt, entradaStr);
+                    break;
                 case 6:
-                    
-                break;
+                    CrudVivero.buscarVivero(productores);
+                    break;
                 case 7:
-                    
-                break;
+                    CrudProceso.buscarProceso(productores, entradaInt, entradaStr);
+                    break;
                 case 8:
-                    
-                break;
+                    CrudLabor.buscarLabor(productores, entradaStr);
+                    break;
                 case 9:
-                    
-                break;
+                    CrudProductor.listarProductor(productores);
+                    break;
                 case 10:
-                    
-                break;
+                    prod = CrudProductor.encontrarProductor(productores, entradaInt);
+                    CrudVivero.mostrarViveros(prod.getViveros());
+                    break;
                 case 11:
-                    
-                break;
+                    CrudProductor.actualizarProductor(productores, entradaInt, entradaStr);
+                    break;
                 case 12:
-                    
-                break;
+                    prod = CrudProductor.encontrarProductor(productores, entradaInt);
+                    Vivero vivero = CrudVivero.encontrarVivero(prod.getViveros(), entradaInt);
+                    CrudVivero.actualizarVivero(vivero);
+                    break;
                 case 13:
-                    
-                break;
+                    CrudProceso.actualizarProceso(productores, entradaInt, entradaStr);
+                    break;
                 case 14:
-                    
-                break;
+                    CrudLabor.actualizarLabor(productores, entradaInt, entradaStr);
+                    break;
                 case 15:
-                    
-                break;
+                    CrudProductor.eliminarProductor(productores, entradaInt, entradaStr);
+                    break;
                 case 16:
-                    
-                break;
+                    CrudVivero.eliminarVivero(productores);
+                    break;
                 case 17:
-                    
-                break;
+                    CrudProceso.eliminarProceso(productores, entradaInt, entradaStr);
+                    break;
                 case 18:
-                    
-                break;
+                    CrudLabor.eliminarLabor(productores, entradaInt, entradaStr);
+                    break;
                 default:
                     System.out.println("Digite una opcion correcta");
                 break;
