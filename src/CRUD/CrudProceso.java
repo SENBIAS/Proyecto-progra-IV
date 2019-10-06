@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author ghost
  */
-public class crudProceso {
+public class CrudProceso {
     private static ArrayList<Proceso> validar(ArrayList<Productor> productores, Scanner entradaInt, Scanner entradaStr)
     {
         ArrayList<Proceso> procesos=null;
@@ -22,7 +22,7 @@ public class crudProceso {
         }else
         {
             System.out.println("Digite el documento del productor.");
-            Productor encontrarProductor = crudProductor.encontrarProductor(productores, entradaInt);
+            Productor encontrarProductor = CrudProductor.encontrarProductor(productores, entradaInt);
             if (encontrarProductor == null)
             {
                 System.out.println("No se encuentra ese productor.");

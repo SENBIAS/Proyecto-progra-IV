@@ -46,7 +46,7 @@ public class CrudProductor {
             }else
             {
                 productorEncontrado.imprimir();
-                //¡¡¡MOSTRAR VIVEROS!!!
+                CrudVivero.mostrarViveros(productorEncontrado.getViveros());
             }
         }
     }
@@ -54,7 +54,7 @@ public class CrudProductor {
     {
         int documento;
         Productor productorEncontrado = null;
-        System.out.println("Digite el documento de identidad.");
+        System.out.println("Digite el documento de identidad del productor.");
         documento = entradaInt.nextInt();
         for (Productor productore : productores) {
             if (productore.getDocumento()==documento)

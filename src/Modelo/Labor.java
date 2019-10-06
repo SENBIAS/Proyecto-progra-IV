@@ -5,6 +5,8 @@
  */
 package Modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Ghost
@@ -14,6 +16,15 @@ public class Labor {
     private String tipoLabor;
     private String fecha;
     private String descripcion;
+    ArrayList<ProductoControl> Productos;
+
+    public ArrayList<ProductoControl> getProductoControl() {
+        return Productos;
+    }
+
+    public void setProductoControl(ArrayList<ProductoControl> productoControl) {
+        this.Productos = productoControl;
+    }
     
     //Metodos.
     
