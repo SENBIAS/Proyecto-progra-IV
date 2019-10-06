@@ -201,6 +201,30 @@ public class Inicio {
         Scanner entradaInt = new Scanner(System.in);
         Scanner entradaStr= new Scanner(System.in);
         ArrayList<Productor> productores = new ArrayList<>();
+        Productor nuevoProductor = new Productor (1,"ander","gomez");
+        productores.add(nuevoProductor);
+        
+        ArrayList<Vivero> viveros = new ArrayList<>();
+        Vivero nuevoVivero = new Vivero(2,"las acacias","risaralda","pereira");
+        viveros.add(nuevoVivero);
+        
+        ArrayList<Proceso> procesos = new ArrayList<>();
+        Proceso nuevoProceso = new Proceso(3,"siembra",15,20);
+        procesos.add(nuevoProceso);
+        
+        ArrayList<Labor> labores = new ArrayList<>();
+        Labor nuevaLabor = new Labor ("fumigar","15 jun","nada");
+        labores.add(nuevaLabor);
+        
+        ArrayList<ProductoControl> productoControl = new ArrayList<>();
+        ControlPlaga nuevaPlaga= new ControlPlaga(987,"laza",10,20);
+        productoControl.add(nuevaPlaga);
+        //ControlPlaga(registroICA, nombreProducto, FrecuenciaAplicacion, periodoCarencia);
+        labores.get(0).setProductoControl(productoControl);
+        procesos.get(0).setLabores(labores);
+        viveros.get(0).setProcesos(procesos);
+        productores.get(0).setViveros(viveros);
+       
         int opcion;
         do {
             menuCRUD();

@@ -65,6 +65,8 @@ public class CrudProductos {
     }
     public static void ingresarProducto (ArrayList<Productor> productores,Scanner entradaInt, Scanner entradaStr, int opcion)
     {
+        int periodoCarencia;
+        int ultimaAplicacion;
         ArrayList<ProductoControl> productos = validar(productores, entradaInt, entradaStr);
         System.out.println("\nDIGITE:\n");
         System.out.println("El registro ICA");
@@ -76,14 +78,14 @@ public class CrudProductos {
         if(opcion == 1)
         {
             System.out.println("El Periodo de carencia del producto (en numero de dias)");
-            int periodoCarencia=entradaInt.nextInt();
+            periodoCarencia=entradaInt.nextInt();
             ControlPlaga nuevoControlPlaga = new ControlPlaga(registroICA, nombreProducto, FrecuenciaAplicacion, periodoCarencia);
             productos.add(nuevoControlPlaga);
         }else
         {
            
             System.out.println("El numero de dias desde cuando se aplico el producto (en numero de dias)");
-            int ultimaAplicacion=entradaInt.nextInt();
+            ultimaAplicacion=entradaInt.nextInt();
             ControlFertilizante nuevoControlFertilizante = new ControlFertilizante(registroICA, nombreProducto, FrecuenciaAplicacion, ultimaAplicacion);
             productos.add(nuevoControlFertilizante);
         }
