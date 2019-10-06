@@ -201,7 +201,7 @@ public class Inicio {
         Scanner entradaInt = new Scanner(System.in);
         Scanner entradaStr= new Scanner(System.in);
         ArrayList<Productor> productores = new ArrayList<>();
-        Productor nuevoProductor = new Productor (1,"ander","gomez");
+        /*Productor nuevoProductor = new Productor (1,"ander","gomez");
         productores.add(nuevoProductor);
         
         ArrayList<Vivero> viveros = new ArrayList<>();
@@ -223,7 +223,7 @@ public class Inicio {
         labores.get(0).setProductoControl(productoControl);
         procesos.get(0).setLabores(labores);
         viveros.get(0).setProcesos(procesos);
-        productores.get(0).setViveros(viveros);
+        productores.get(0).setViveros(viveros);*/
        
         int opcion;
         do {

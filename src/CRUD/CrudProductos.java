@@ -5,13 +5,7 @@
  */
 package CRUD;
 
-import Modelo.ControlFertilizante;
-import Modelo.ControlPlaga;
-import Modelo.Labor;
-import Modelo.Proceso;
-import Modelo.ProductoControl;
-import Modelo.Productor;
-import Modelo.Vivero;
+import Modelo.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -23,7 +17,7 @@ public class CrudProductos {
     
     private static ArrayList<ProductoControl> validar(ArrayList<Productor> productores,Scanner entradaInt, Scanner entradaStr)
     {
-        ArrayList<ProductoControl> productos = null;
+        ArrayList<ProductoControl> productos = new ArrayList<>();
        
        if(productores.isEmpty()){
            System.out.println("Sin productores no pueden existir labores");

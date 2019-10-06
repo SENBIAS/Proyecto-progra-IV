@@ -16,15 +16,7 @@ public class Labor {
     private String tipoLabor;
     private String fecha;
     private String descripcion;
-    ArrayList<ProductoControl> Productos;
-
-    public ArrayList<ProductoControl> getProductoControl() {
-        return Productos;
-    }
-
-    public void setProductoControl(ArrayList<ProductoControl> productoControl) {
-        this.Productos = productoControl;
-    }
+    ArrayList<ProductoControl> productos = new ArrayList<>();
     
     //Metodos.
     
@@ -61,6 +53,13 @@ public class Labor {
         this.descripcion = descripcion;
     }
     
+    public ArrayList<ProductoControl> getProductoControl() {
+        return productos;
+    }
+
+    public void setProductoControl(ArrayList<ProductoControl> productoControl) {
+        this.productos = productoControl;
+    }
     public void imprimir()
     {
         System.out.println("Tipo de labor:  "+tipoLabor);
