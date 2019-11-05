@@ -33,7 +33,8 @@ public class Inicio {
         System.out.println("4<-     Ingrse labores.\n");
         System.out.println("5<-     Ingrese un producto de control de plagas");
         System.out.println("6<-     Ingrese un producto de control fertilizante");
-        System.out.println("7<-     Salir.");
+        System.out.println("7<-     Ingrese un Control fisico maleza.");
+        System.out.println("8<-     Salir.");
     }
     public static void menuBuscar()
     {
@@ -43,9 +44,10 @@ public class Inicio {
         System.out.println("3<-     Busque la informacion de un proceso.");
         System.out.println("4<-     Busque la informacion de las labores.");
         System.out.println("5<-     Busque productos de control");
-        System.out.println("6<-     Liste los Productores");
-        System.out.println("7<-     Liste los viveros.");
-        System.out.println("8<-     Salir.");
+ //       System.out.println("6<-     Busque control fisico maleza.");
+        System.out.println("7<-     Liste los Productores");
+        System.out.println("8<-     Liste los viveros.");
+        System.out.println("9<-     Salir.");
     }
     
     public static void menuActualizar()
@@ -56,7 +58,8 @@ public class Inicio {
         System.out.println("3<-     Actualice la informacion de procesos.");
         System.out.println("4<-     Actualice la informacion de labores.\n");
         System.out.println("5<-     Actualice la informacion producto control");
-        System.out.println("6<-     Salir.");
+//        System.out.println("6<-     Actualice la informacion de control fisico maleza");
+        System.out.println("7<-     Salir.");
     }
     
     public static void menuEliminar()
@@ -67,8 +70,9 @@ public class Inicio {
         System.out.println("2<-     Elimine viveros.");
         System.out.println("3<-     Elimine procesos.");
         System.out.println("4<-     Elimine labores.\n");
-        System.out.println("5<-     Elimine producto de control");
-        System.out.println("6<-     Salir.");
+        System.out.println("5<-     Elimine producto de control.");
+ //       System.out.println("6<-     Elimine control fisico maleza.");
+        System.out.println("7<-     Salir.");
     }
     public static void opcionesAgregar(ArrayList<Productor> productores, Scanner entradaInt, Scanner entradaStr)
     {
@@ -97,8 +101,11 @@ public class Inicio {
                 case 6:
                     CrudProductos.ingresarProducto(productores, entradaInt, entradaStr, 2);
                     break;
+                case 7:
+                    CrudControlFisicoMaleza.ingresarControlFisico(productores, entradaInt, entradaStr);
+                    break;
             }
-        }while(opcion!=7);
+        }while(opcion!=8);
     }
     
     public static void opcionesBuscar(ArrayList<Productor> productores, Scanner entradaInt, Scanner entradaStr)
@@ -133,9 +140,11 @@ public class Inicio {
                     prod = CrudProductor.encontrarProductor(productores, entradaInt);
                     CrudVivero.mostrarViveros(prod.getViveros());
                     break;
-                    
+                case 8:
+                    CrudControlFisicoMaleza.BuscarControlFisico(productores, entradaInt, entradaStr);
+                    break;    
             }
-        }while(opcion!=8);
+        }while(opcion!=9);
     } 
 
     public static void opcionesActualizar(ArrayList<Productor> productores, Scanner entradaInt, Scanner entradaStr)
@@ -163,8 +172,11 @@ public class Inicio {
                 case 5:
                     CrudProductos.ActualizarProductos(productores, entradaInt, entradaStr);
                     break;
+                case 6:
+                    CrudControlFisicoMaleza.ActualizarControlFisico(productores, entradaInt, entradaStr);
+                    break;
             }
-        }while(opcion!=6);
+        }while(opcion!=7);
     }
     public static void opcionesEliminar(ArrayList<Productor> productores, Scanner entradaInt, Scanner entradaStr)
     {
@@ -193,8 +205,11 @@ public class Inicio {
                 case 5:
                     CrudProductos.EliminarProductos(productores, entradaInt, entradaStr);
                     break;
+                case 6:
+                    CrudControlFisicoMaleza.EliminarControlFisico(productores, entradaInt, entradaStr);
+                    break;
             }
-        }while(opcion!=6);
+        }while(opcion!=7);
     }   
         
     public static void main(String[] args) {

@@ -16,8 +16,8 @@ public class Labor {
     private String tipoLabor;
     private String fecha;
     private String descripcion;
-    ArrayList<ProductoControl> productos = new ArrayList<>();
-    ArrayList<ControlFisicoMaleza> controlFisicoMalezas= new ArrayList<>();
+    private ArrayList<ProductoControl> productos;
+    private ArrayList<ControlFisicoMaleza> controlFisicoMalezas;
     
     //Metodos.
     
@@ -28,6 +28,8 @@ public class Labor {
         this.tipoLabor = tipoLabor;
         this.fecha = fecha;
         this.descripcion = descripcion;
+        this.productos = new ArrayList();
+        this.controlFisicoMalezas= new ArrayList();
     }
 
     public String getTipoLabor() {
@@ -77,7 +79,8 @@ public class Labor {
     public void setControlFisicoMalezas(ArrayList<ControlFisicoMaleza> controlFisicoMalezas) {
         this.controlFisicoMalezas = controlFisicoMalezas;
     }
-    
+
+
     
     public void imprimir()
     {

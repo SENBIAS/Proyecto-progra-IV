@@ -62,7 +62,7 @@ public class CrudControlFisicoMaleza {
        }
        return controlFisico;
     }
-    public static void ingresarControlFisico (ArrayList<Productor> productores,Scanner entradaInt, Scanner entradaStr, int opcion)
+    public static void ingresarControlFisico (ArrayList<Productor> productores,Scanner entradaInt, Scanner entradaStr)
     {
         int frecuenciaPoda;
         String fechaUltimaPoda;
@@ -76,7 +76,7 @@ public class CrudControlFisicoMaleza {
         controlFisico.add(nuevoControlFisico);
     }
     
-    public static void BuscarProducto(ArrayList<Productor> productores,Scanner entradaInt, Scanner entradaStr)
+    public static void BuscarControlFisico(ArrayList<Productor> productores,Scanner entradaInt, Scanner entradaStr)
     {
         ArrayList<ControlFisicoMaleza> controlFisico = validar(productores, entradaInt, entradaStr);
         if(controlFisico.isEmpty())
@@ -110,7 +110,7 @@ public class CrudControlFisicoMaleza {
         return controlFisicoEncontrado;
     }
     
-    public static void ActualizarProductos(ArrayList<Productor> productores,Scanner entradaInt, Scanner entradaStr)
+    public static void ActualizarControlFisico(ArrayList<Productor> productores,Scanner entradaInt, Scanner entradaStr)
     {
         
         int opcion;
@@ -154,21 +154,21 @@ public class CrudControlFisicoMaleza {
         System.out.println("5<- Salir\n");
     }
     
-    public static void EliminarProductos(ArrayList<Productor> productores,Scanner entradaInt, Scanner entradaStr)
+    public static void EliminarControlFisico(ArrayList<Productor> productores,Scanner entradaInt, Scanner entradaStr)
     {
-        ArrayList<ProductoControl> productos = validar(productores, entradaInt, entradaStr);
-        ProductoControl productoEncontrado = EncontrarProducto(productos, entradaInt, entradaStr);
-        if (productoEncontrado==null)
+        ArrayList<ControlFisicoMaleza> productos = validar(productores, entradaInt, entradaStr);
+        ControlFisicoMaleza controlFisicoEncontrado = EncontrarProducto(productos, entradaInt, entradaStr);
+        if (controlFisicoEncontrado==null)
         {
-            System.out.println("No se encuentra un producto con ese registro");
+            System.out.println("No se encuentra el control fisico con ese registro");
         }else
         {
-            if (productos.remove(productoEncontrado))
+            if (productos.remove(controlFisicoEncontrado))
             {
-                System.out.println("producto eliminado");
+                System.out.println("control fisico eliminado");
             }else
             {
-                System.out.println("No se pudo eliminar este producto");
+                System.out.println("No se pudo eliminar este control fisico");
             }
         }
     }
