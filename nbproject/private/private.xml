@@ -3,11 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ghost/Desktop/AnderGit/SistemaViveros/src/App/Inicio.java</file>
-            <file>file:/C:/Users/ghost/Desktop/AnderGit/SistemaViveros/src/Modelo/ControlPlaga.java</file>
+            <file>file:/C:/Users/ghost/Desktop/AnderGit/SistemaViveros/src/CRUD/CrudControlFisicoMaleza.java</file>
             <file>file:/C:/Users/ghost/Desktop/AnderGit/SistemaViveros/src/Modelo/Labor.java</file>
-            <file>file:/C:/Users/ghost/Desktop/AnderGit/SistemaViveros/src/CRUD/CrudProductos.java</file>
-            <file>file:/C:/Users/ghost/Desktop/AnderGit/SistemaViveros/src/CRUD/CrudProceso.java</file>
+            <file>file:/C:/Users/ghost/Desktop/AnderGit/SistemaViveros/src/CRUD/CrudLabor.java</file>
+            <file>file:/C:/Users/ghost/Desktop/AnderGit/SistemaViveros/src/Modelo/ControlFisicoMaleza.java</file>
         </group>
     </open-files>
 </project-private>
